@@ -1,13 +1,14 @@
-import Navbar from "./components/common/Navbar";
+import { Routes, Route } from 'react-router-dom';
 import Homepage from "./pages/common/Homepage";
-import Footer from "./components/common/Footer";
+import Tools from './pages/tools/Tools';
 
 export default function App() {
   return (
   <>
-    <Navbar></Navbar>
-    <Homepage></Homepage>
-    <Footer></Footer>
+    <Routes>
+      <Route index element={<Homepage></Homepage>}></Route>
+      <Route path="/tools" element={<Tools></Tools>}></Route>
+    </Routes>
   </>
   );
 }
