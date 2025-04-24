@@ -1,7 +1,18 @@
 @import "tailwindcss";
 
+body {
+    @apply bg-primary text-secondary font-[Host_Grotesk] min-h-screen flex flex-col;
+}
+
+#root {
+    @apply flex flex-col min-h-screen;
+}
+
 @theme {
+    --navbar-h: calc(var(--spacing) * 12);
+    --footer-h: calc(var(--spacing) * 10);
     --color-primary: #000000;
     --color-secondary: #ffffff;
     --color-accent: #0000ff;
+    --spacing-a: calc(100vh - var(--navbar-h) - var(--footer-h));
 }
