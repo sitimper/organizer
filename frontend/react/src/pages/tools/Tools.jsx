@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import api from "../../api";
 import Navbar from "../../components/common/Navbar";
 import Footer from "../../components/common/Footer";
 import ToolItem from "../../components/tools/ToolItem";
-import AddToolButton from "../../components/ui/AddToolButton";
+import AddButton from "../../components/ui/AddButton";
+import ModalCreation from "../../components/tools/charts/popup/ModalCreation";
 
 export default function Tools({ title }) {
     const { toolType } = useParams();
@@ -33,7 +34,8 @@ export default function Tools({ title }) {
     }, [])
 
     if (notFound) return <Navigate to="/not-found" replace />;
-    if (loading) return <div>Loading...</div>
+    if (loading) return <div>Loading...</div>;
+
 
     listTools = tools.map(tool => 
         <ToolItem key={tool.id} text={tool.title} url={`/tools/${toolType}/${tool.id}`} imageUrl={tool.thumbnail_url}/>
@@ -47,7 +49,7 @@ export default function Tools({ title }) {
             <div className="flex flex-wrap justify-center gap-8 mt-4">
                {listTools}
             </div>
-            <AddToolButton className="mt-4" ></AddToolButton>
+            <div className="mt-4"><ModalCreation toolType={toolType} /></div>
         </main>
         <Footer></Footer>
         </>

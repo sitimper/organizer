@@ -3,8 +3,8 @@ import Homepage from "./pages/common/Homepage";
 import NotFound from './pages/common/NotFound';
 import ToolsBrowser from './pages/tools/ToolsBrowser';
 import Tools from './pages/tools/Tools';
-import AddTool from './pages/tools/addTool/AddTool';
 import Tool from './pages/tools/Tool';
+import AddTool from './pages/tools/addTool/AddTool';
 
 export default function App() {
   return (

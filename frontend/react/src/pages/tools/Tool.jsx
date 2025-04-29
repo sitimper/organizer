@@ -1,9 +1,9 @@
 import api from "../../api";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import Navbar from "../../components/common/Navbar";
 import Footer from "../../components/common/Footer";
-import Graph from "./types/Graph";
+import Chart from "./types/Chart";
 
 export default function Tool() {
     const { toolType, toolId } = useParams();
@@ -17,7 +17,7 @@ export default function Tool() {
         async function fetchTool() {
             try {
                 const response = await api.get(`/tools/${toolType}/${toolId}`);
-                console.log(`/tools/${toolType}/${toolId}`)
+                console.log(`/tools/${toolType}/${toolId}`);
                 setTool(response.data.tool);
             } catch (error) {
                 if (error.response?.status === 404 || error.response?.status === 422) {
@@ -32,14 +32,14 @@ export default function Tool() {
         fetchTool();
     }, [toolId])
 
-    if (toolType == "graphs") {
-        child = <Graph tool={tool} />;
+    if (toolType == "charts") {
+        child = <Chart tool={tool} />;
     } else {
         setNotFound(true);
     }
 
     if (notFound) return <Navigate to="/not-found" replace />;
-    if (loading) return <div>Loading...</div>
+    if (loading) return <div>Loading...</div>;
 
     return (
         <>

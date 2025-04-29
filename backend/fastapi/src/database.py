@@ -1,5 +1,6 @@
 from sqlmodel import SQLModel, Session, create_engine
 from tools.models import *
+from tools.charts.models import *
 
 db_file_name = "main.db"
 db_url = f"sqlite:///../../../backend/databases/{db_file_name}" # ../../../

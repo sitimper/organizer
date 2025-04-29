@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from tools.router import router as tools_router
+from tools.charts.router import router as charts_router
 
 app = FastAPI()
 
-routers = [tools_router]
+routers = [charts_router]
 
 for router in routers:
     app.include_router(router)

@@ -7,7 +7,7 @@ export default function Homepage() {
         <>
         <Navbar></Navbar>
         <main className="flex flex-1 flex-col items-center bg-primary text-secondary">
-            <section className="w-screen h-[400px] flex justify-center items-center text-8xl bg-[url(assets/backgrounds/sea.jpg)] bg-no-repeat bg-cover bg-center">
+            <section className="w-screen h-[400px] flex justify-center items-center text-8xl bg-[url(assets/backgrounds/library2.jpg)] bg-no-repeat bg-cover bg-center">
                 Organizer
             </section>
             <section className="py-8 flex flex-col items-center">
