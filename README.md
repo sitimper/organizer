@@ -1,2 +1,2 @@
 # Organizer
-Helps to organize your life
+Helps organizing your life (Work In Progress)
