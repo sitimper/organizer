@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import LineChart from "./LineChart";
 
 export default function ChartBase({ tool }) {
-    const [ datasets, setDatasets ] = useState("");
+    const [ datasets, setDatasets ] = useState(null);
     const [ notFound, setNotFound ] = useState(false);
     const [ loading, setLoading ] = useState(true);
 
@@ -42,7 +42,6 @@ export default function ChartBase({ tool }) {
     else {
         return <Navigate to="/not-found" replace />;
     }
-
 
     if (notFound) return <Navigate to="/not-found" replace />;
     if (loading) return <div>Loading...</div>;

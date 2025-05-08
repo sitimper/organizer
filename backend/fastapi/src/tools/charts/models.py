@@ -3,7 +3,7 @@ from tools.models import Tool
 
 class Chart(Tool, table=True):
     id: int | None = Field(default=None, primary_key=True)
-    labels: str | None = Field(default=None)
+    labels: str | None = Field(default="[]")
     datasets: list["ChartDataset"] | None = Relationship(back_populates="chart")
     options: str | None = Field(default=None)
 
